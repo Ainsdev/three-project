@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <canvas id="bg" class="fixed top-0 left-0"></canvas>
+  <main class="absolute">
+    <header class="flex flex-col justify-center items-center w-screen h-96">
+      <h1 class="text-8xl font-bold text-white">To SPACE</h1>
+      <p
+        class="text-3xl font-medium my-5 py-4 px-5 rounded-2xl text-black bg-gradient-to-r from-green-200 via-green-300 to-blue-500">
+        in 2030
+        we will send you to space</p>
+    </header>
+    <section
+      class="my-[50%] flex flex-col justify-center items-center w-[70%] mx-auto bg-white rounded-xl p-7 bg-opacity-40">
+      <blockquote class="text-5xl first-letter:text-white font-bold">
+        You dont have to be a rocket scientist.
+      </blockquote>
+      <h1 class="my-16 text-2xl">
+        <span class="text-white font-extrabold">Space</span>
+        <span class="text-green-500 font-medium">is Yours</span>
+      </h1>
+    </section>
+    <section class="my-[50%] flex justify-center items-center w-screen">
+      <blockquote class="text-7xl first-letter:text-green-500 font-bold">
+        Take a sit Now
+      </blockquote>
+      <h1 class="mx-16 text-xl flex-col flex ">
+        <span class="text-white font-medium">We have the most</span>
+        <span class="text-white font-medium">exciting adventure for you.</span>
+        <span class="text-white font-semibold">There are limited tickets</span>
+        <a class="text-white font-semibold underline">Check seats</a>
+      </h1>
+    </section>
+    <section class="my-[20%] flex justify-between items-center w-screen px-24">
+      <div class="flex items-start flex-col">
+        <h2 class="text-7xl text-green-500 font-bold">Reservations for 2030</h2>
+        <button type="button"
+          class="mt-16 text-white focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+          Choose plan
+          <svg aria-hidden="true" class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex items-start flex-col">
+        <h2 class="text-7xl text-white font-bold">Reservations for 2033</h2>
+        <button type="button"
+          class="mt-16  text-white focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-black dark:hover:bg-green-400 dark:focus:ring-green-800">
+          Choose plan
+          <svg aria-hidden="true" class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

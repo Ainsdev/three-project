@@ -1,6 +1,5 @@
 import './style.css'
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 //Three.js
 const scene = new THREE.Scene();
@@ -8,7 +7,6 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({
     canvas: document.getElementById('bg'),
 });
-
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(35);
@@ -18,34 +16,32 @@ camera.position.setZ(35);
 
 //lights
 const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5, 5, 5);
+pointLight.position.set(-25, -7, 15);
 scene.add(pointLight);
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
 scene.add(ambientLight);
 
 //helpers
-// const controls = new OrbitControls(camera, renderer.domElement);
 // const lightHelper = new THREE.PointLightHelper(pointLight);
-// const lightHelper2 = new THREE.PointLightHelper(ambientLight);
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(lightHelper, lightHelper2, gridHelper);
+// scene.add(lightHelper);
 
 //Starts
 function addStar() {
-    const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-    const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+    var geometry = new THREE.SphereGeometry(0.12, 12, 12);
+    var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
     const star = new THREE.Mesh(geometry, material);
-
     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
     star.position.set(x, y, z);
     star.castShadow = true;
     scene.add(star);
 }
-Array(200).fill().forEach(addStar);
+Array(2000).fill().forEach(addStar);
+
+//background
 const spaceTexture = new THREE.TextureLoader().load('./assets/milky-way-2560x1440-stars-4k-20311.jpg');
 scene.background = spaceTexture;
 
-//jupiter
+//planet
 const planetTexture = new THREE.TextureLoader().load('https://i.ibb.co/h94JBXy/saturn3-ljge5g.jpg');
 planetTexture.anisotropy = 16;
 const planet = new THREE.Mesh(new THREE.SphereGeometry(4, 24, 24), new THREE.MeshStandardMaterial({ map: planetTexture }));
@@ -67,7 +63,7 @@ moon.position.set(-43,-8, -5);
 function moveCamera() {
     const t = document.body.getBoundingClientRect().top;
     camera.position.z = t * -0.009;
-    camera.position.x = t * -0.002;
+    camera.position.x = t * -0.004;
     camera.rotation.y = t * -0.0002;
 }
 document.body.onscroll = moveCamera;

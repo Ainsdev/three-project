@@ -38,7 +38,7 @@ function addStar() {
 Array(2000).fill().forEach(addStar);
 
 //background
-const spaceTexture = new THREE.TextureLoader().load('./assets/milky-way-2560x1440-stars-4k-20311.jpg');
+const spaceTexture = new THREE.TextureLoader().load('https://static.photocdn.pt/images/articles/2017/05/03/iStock-511459498.jpg');
 scene.background = spaceTexture;
 
 //planet
